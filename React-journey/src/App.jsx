@@ -4,7 +4,7 @@ function UserCard(props){
 
   return (
 
-  <div className="card">
+    <div className="card">
 
     <div className="status">
       {props.isOnline ? "🟢 Online" : "🔴 Offline"}
@@ -110,7 +110,7 @@ function App(){
 
   return(
     
-    <div>
+    <div className="container">
       {
         users.map((user)=> (
           <UserCard 
