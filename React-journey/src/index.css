@@ -1,0 +1,17 @@
+.card{
+  background-color: #7bc2d8;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.card h2{
+  margin-bottom: 10px;
+}
+
+.card p{
+  margin: 5px 0;
+}

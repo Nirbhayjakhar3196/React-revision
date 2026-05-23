@@ -1,0 +1,24 @@
+.card{
+  background-color: #0d4362;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.card h2{
+  margin-bottom: 5px;
+}
+
+.card p{
+  margin: 5px 0;
+}
+
+.card img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    /* align-items: center; */
+}
