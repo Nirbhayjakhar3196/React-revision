@@ -1,11 +1,12 @@
 .card{
-  background-color: #0d4362;
-  color: white;
-  padding: 20px;
-  border-radius: 12px;
-  margin: 20px;
-  width: 250px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  width: 320px;
+padding: 20px;
+border-radius: 20px;
+background-color: #1e1e1e;
+color: white;
+margin: 20px auto;
+text-align: center;
+transition: 0.3s;
 }
 
 .card h2{
@@ -17,8 +18,9 @@
 }
 
 .card img{
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    /* align-items: center; */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
 }
+
