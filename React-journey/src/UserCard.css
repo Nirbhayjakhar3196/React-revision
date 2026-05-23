@@ -1,3 +1,7 @@
+
+
+
+
 .card{
   width: 320px;
 padding: 20px;
@@ -22,6 +26,19 @@ transition: 0.3s;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.prof{
+  display: inline-block;
+  padding: 6px 14px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: #02465f;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+  
 }
 
 .card:hover{

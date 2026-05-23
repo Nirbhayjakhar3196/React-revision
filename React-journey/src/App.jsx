@@ -16,6 +16,8 @@ function UserCard(props){
 
     <p className="city">{props.city}</p>
 
+    <p className="prof">{props.profession}</p>
+
     <p>Age : {props.age}</p>
 
     <p>Hobby : {props.hobby}</p>
@@ -64,7 +66,8 @@ function App(){
       city: "Rohtak",
       hobby:"Games",
       followers:58,
-      isOnline:false
+      isOnline:false,
+      profession:"Full Stack Developer"
     },
     {
       id: 2,
@@ -75,7 +78,8 @@ function App(){
       city: "Delhi",
       hobby:"Song",
       followers:48,
-      isOnline:true
+      isOnline:true,
+      profession:"Frontend Developer"
     },
 
     {
@@ -87,7 +91,8 @@ function App(){
       city: "Rohtak",
       hobby:"sleeping",
       followers:67,
-      isOnline:true
+      isOnline:true,
+      profession:"Backend Developer"
     },
     {
       id:4,
@@ -98,7 +103,8 @@ function App(){
       city: "Majra",
       hobby:"Shopping",
       followers:69,
-      isOnline:false
+      isOnline:false,
+      profession:"Frontend Design Developer"
     }
   ]
 
@@ -116,7 +122,8 @@ function App(){
             img={user.img}
             isOnline={user.isOnline}
             hobby={user.hobby}  
-            followers={user.followers}        
+            followers={user.followers}  
+            profession={user.profession}      
           
           />
         ))
