@@ -1,6 +1,7 @@
 import './UserCard.css'
 
 function UserCard(props){
+
   return (
     
     <div className="card">
@@ -9,7 +10,9 @@ function UserCard(props){
       <p>Age : {props.age}</p>
       <p>Skills : {props.skills}</p>
       <p>City : {props.city}</p>
-      
+      <p>Hooby : {props.hobby}</p>
+      <p>Followers : {props.followers}</p>
+      {props.isOnline? <h1>🟢 Online</h1> : <h1>🔴 Offline</h1> }
     </div>
   )
 }
@@ -23,7 +26,10 @@ function App(){
       name:"Nirbhay Jakhar",
       age:18,
       skills: "HTML, CSS, JS, React",
-      city: "Rohtak"
+      city: "Rohtak",
+      hooby:"Games",
+      followers:58,
+      isOnline:false
     },
     {
       id: 2,
@@ -31,7 +37,10 @@ function App(){
       name: "Jatin",
       age: 19,
       skills: "HTML, CSS, JS",
-      city: "Delhi"
+      city: "Delhi",
+      hooby:"Song",
+      followers:48,
+      isOnline:true
     },
 
     {
@@ -40,15 +49,21 @@ function App(){
       name: "Bhavi",
       age: 17,
       skills: "HTML, CSS",
-      city: "Rohtak"
+      city: "Rohtak",
+      hooby:"sleeping",
+      followers:67,
+      isOnline:true
     },
     {
       id:4,
-      img:"https://i.pinimg.com/736x/d2/04/d7/d204d7256977f11f733a7ddd73c92e5e.jpggit ",
+      img:"https://i.pinimg.com/736x/d2/04/d7/d204d7256977f11f733a7ddd73c92e5e.jpg ",
       name:"Mukesh",
       age: 35,
       skills: "HTML, CSS, MERN, Node.js",
-      city: "Majra"
+      city: "Majra",
+      hooby:"Shopping",
+      followers:69,
+      isOnline:false
     }
   ]
 
@@ -64,7 +79,9 @@ function App(){
             skills={user.skills}
             city={user.city}
             img={user.img}
-          
+            isOnline={user.isOnline}
+            hobby={user.hooby}  
+            followers={user.followers}        
           
           />
         ))
@@ -72,5 +89,7 @@ function App(){
     </div>
   )
 }
+
+
 
 export default App
