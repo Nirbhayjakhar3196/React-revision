@@ -24,3 +24,37 @@ transition: 0.3s;
   object-fit: cover;
 }
 
+.card:hover{
+
+  transform: translateY(-6px);
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.4);
+  
+}
+
+.stats{
+  display: flex;
+  justify-content: space-around;
+}
+
+.skill{
+  display: inline-block;
+  padding: 6px 14px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: #4f46e5;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.skill:hover{
+  background-color: #3730a3;
+  transform: scale(1.05);
+
+}
+
+.status{
+  font-weight: 500;
+  margin-bottom: 10px;
+}
