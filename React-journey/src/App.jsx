@@ -29,6 +29,8 @@ function UserCard(props){
 
     <h2>{props.name}</h2>
 
+    {followersCount >= 60 && <p className='badge'>⭐ Popular Creator</p>}
+
     <p className="city">{props.city}</p>
 
     <p className="prof">{props.profession}</p>
