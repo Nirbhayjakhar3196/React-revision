@@ -53,3 +53,23 @@
 .like-btn{
   flex: 1;
 }
+
+.badge{
+  color: gold;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.status-btn{
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.status-btn:hover{
+  transform: scale(1.03);
+}

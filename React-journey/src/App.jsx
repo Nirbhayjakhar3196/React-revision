@@ -6,6 +6,7 @@ function UserCard(props){
   const [liked, setLiked] = useState(false)
   const [follow, setFollow] = useState(false)
   const [followersCount, setFollowersCount] = useState(props.followers)
+  const [online, setOnline] = useState(props.isOnline)
 
   function HandleLike() {
     if(liked){
@@ -19,10 +20,17 @@ function UserCard(props){
 
   return (
 
-    <div className="card">
+    <div 
+      className="card"
+      style={{
+      boxShadow: liked
+        ? "0 0 20px hotpink"
+        : "0 0 10px rgba(0,0,0,0.3)"
+      }}
+    >
 
     <div className="status">
-      {props.isOnline ? "🟢 Online" : "🔴 Offline"}
+      {online ? "🟢 Online" : "🔴 Offline"}
     </div>
 
     <img src={props.img} alt="img" />
@@ -56,7 +64,7 @@ function UserCard(props){
     <div className="stats">
 
       <div>
-        <h3>{followersCount}</h3>
+        <h3 style={{color: followersCount >= 60 ? "gold" : "white"}} >{followersCount}</h3>
         <p>Followers</p>
       </div>
 
@@ -73,6 +81,9 @@ function UserCard(props){
     </button>
     <button className='follow-btn' style={{backgroundColor: follow ? "green" : "#ddd"}} onClick={() => setFollow(!follow)}>
       {follow ? "Following" : "Follow"}
+    </button>
+    <button className='status-btn' onClick={() => setOnline(!online)}>
+      {online?  "Go Offline" : "Go Online"}
     </button>
     </div>
 
