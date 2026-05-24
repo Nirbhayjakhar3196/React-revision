@@ -1,6 +1,9 @@
 import './UserCard.css'
+import { useState } from 'react'
 
 function UserCard(props){
+
+  const [liked, setLiked] = useState(false)
 
   return (
 
@@ -49,6 +52,10 @@ function UserCard(props){
       </div>
 
     </div>
+
+    <button className='like-btn' style={{backgroundColor: liked ? "hotpink" : "red"}} onClick={() => setLiked(!liked)}>
+      {liked ? "❤️ Liked" : "🤍 Like"}
+    </button>
 
   </div>
 )
