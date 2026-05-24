@@ -5,6 +5,17 @@ function UserCard(props){
 
   const [liked, setLiked] = useState(false)
   const [follow, setFollow] = useState(false)
+  const [followersCount, setFollowersCount] = useState(props.followers)
+
+  function HandleLike() {
+    if(liked){
+      setFollowersCount(followersCount -1 )
+    }else{
+      setFollowersCount(followersCount + 1)
+    }
+
+    setLiked(!liked)
+  }
 
   return (
 
@@ -43,7 +54,7 @@ function UserCard(props){
     <div className="stats">
 
       <div>
-        <h3>{props.followers}</h3>
+        <h3>{followersCount}</h3>
         <p>Followers</p>
       </div>
 
@@ -55,7 +66,7 @@ function UserCard(props){
     </div>
 
     <div className='action-buttons'>
-      <button className='like-btn' style={{backgroundColor: liked ? "hotpink" : "red"}} onClick={() => setLiked(!liked)}>
+      <button className='like-btn' style={{backgroundColor: liked ? "hotpink" : "red"}} onClick={HandleLike}>
       {liked ? "❤️ Liked" : "🤍 Like"}
     </button>
     <button className='follow-btn' style={{backgroundColor: follow ? "green" : "#ddd"}} onClick={() => setFollow(!follow)}>
