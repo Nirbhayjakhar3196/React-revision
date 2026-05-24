@@ -4,6 +4,7 @@ import { useState } from 'react'
 function UserCard(props){
 
   const [liked, setLiked] = useState(false)
+  const [follow, setFollow] = useState(false)
 
   return (
 
@@ -53,9 +54,14 @@ function UserCard(props){
 
     </div>
 
-    <button className='like-btn' style={{backgroundColor: liked ? "hotpink" : "red"}} onClick={() => setLiked(!liked)}>
+    <div className='action-buttons'>
+      <button className='like-btn' style={{backgroundColor: liked ? "hotpink" : "red"}} onClick={() => setLiked(!liked)}>
       {liked ? "❤️ Liked" : "🤍 Like"}
     </button>
+    <button className='follow-btn' style={{backgroundColor: follow ? "green" : "#ddd"}} onClick={() => setFollow(!follow)}>
+      {follow ? "Following" : "Follow"}
+    </button>
+    </div>
 
   </div>
 )
