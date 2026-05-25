@@ -1,18 +1,18 @@
 import './UserCard.css'
 import { useState } from 'react'
 
-function UserCard(props){
+function UserCard({user}){
 
   const [liked, setLiked] = useState(false)
-  const [follow, setFollow] = useState(false)
-  const [followersCount, setFollowersCount] = useState(props.followers)
-  const [online, setOnline] = useState(props.isOnline)
+  const [isFollowing, setIsFollowing] = useState(false)
+  const [followersCount, setFollowersCount] = useState(user.followers)
+  const [isOnline, setIsOnline] = useState(user.isOnline)
 
   function HandleLike() {
     if(liked){
-      setFollowersCount(followersCount -1 )
+      setFollowersCount(prev => prev - 1)
     }else{
-      setFollowersCount(followersCount + 1)
+      setFollowersCount(prev => prev + 1)
     }
 
     setLiked(!liked)
@@ -30,29 +30,29 @@ function UserCard(props){
     >
 
     <div className="status">
-      {online ? "🟢 Online" : "🔴 Offline"}
+      {isOnline ? "🟢 Online" : "🔴 Offline"}
     </div>
 
-    <img src={props.img} alt="img" />
+    <img src={user.img} alt="img" />
 
-    <h2>{props.name}</h2>
+    <h2>{user.name}</h2>
 
     {followersCount >= 60 && <p className='badge'>⭐ Popular Creator</p>}
 
-    <p className="city">{props.city}</p>
+    <p className="city">{user.city}</p>
 
-    <p className="prof">{props.profession}</p>
+    <p className="prof">{user.profession}</p>
 
-    <p>Age : {props.age}</p>
+    <p>Age : {user.age}</p>
 
-    <p>Hobby : {props.hobby}</p>
+    <p>Hobby : {user.hobby}</p>
 
     <div className="skills-container">
 
       <h3>Skills</h3>
 
       {
-        props.skills.map((skill, index) => (
+        user.skills.map((skill, index) => (
           <span className="skill" key={index}>
             {skill}
           </span>
@@ -69,7 +69,7 @@ function UserCard(props){
       </div>
 
       <div>
-        <h3>{props.skills.length}</h3>
+        <h3>{user.skills.length}</h3>
         <p>Skills</p>
       </div>
 
@@ -79,11 +79,11 @@ function UserCard(props){
       <button className='like-btn' style={{backgroundColor: liked ? "hotpink" : "red"}} onClick={HandleLike}>
       {liked ? "❤️ Liked" : "🤍 Like"}
     </button>
-    <button className='follow-btn' style={{backgroundColor: follow ? "green" : "#ddd"}} onClick={() => setFollow(!follow)}>
-      {follow ? "Following" : "Follow"}
+    <button className='follow-btn' style={{backgroundColor: isFollowing ? "green" : "#ddd"}} onClick={() => setIsFollowing(!isFollowing)}>
+      {isFollowing ? "Following" : "Follow"}
     </button>
-    <button className='status-btn' onClick={() => setOnline(!online)}>
-      {online?  "Go Offline" : "Go Online"}
+    <button className='status-btn' onClick={() => setIsOnline(!isOnline)}>
+      {isOnline?  "Go Offline" : "Go Online"}
     </button>
     </div>
 
@@ -151,16 +151,8 @@ function App(){
       {
         users.map((user)=> (
           <UserCard 
-            key={user.id}
-            name={user.name}
-            age={user.age}
-            skills={user.skills}
-            city={user.city}
-            img={user.img}
-            isOnline={user.isOnline}
-            hobby={user.hobby}  
-            followers={user.followers}  
-            profession={user.profession}      
+            user={user}    
+            key={user.id} 
           
           />
         ))
